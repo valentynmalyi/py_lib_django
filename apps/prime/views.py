@@ -10,7 +10,11 @@ class PrimeNumber(views.APIView):
     def get(self, request, n):
         serializer = serializers.PrimeNumberSerializer(data={"n": n})
         serializer.is_valid(raise_exception=True)
-        if divided_by_2_3.utils.is_divided(n):
-            return Response(data={"error": f"Число {n} делиться на 2 либо на 3"})
+        # Плохо
+        if divided_by_2_3.utils.is_divided_by_2(n):
+            return Response(data={"error": f"Число {n} делиться на 2"})
+
+        if divided_by_2_3.utils.is_divided_by_3(n):
+            return Response(data={"error": f"Число {n} делиться на 3"})
 
         return Response(data={"status": "ok"})
