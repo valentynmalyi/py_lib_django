@@ -1,5 +1,5 @@
 from rest_framework import serializers
-from pylib_libs import divided_by_2_3
+from pylib_libs import divided_by_2_3, divided_by_5_7
 
 
 class PrimeNumberSerializer(serializers.Serializer):
@@ -13,4 +13,6 @@ class PrimeNumberSerializer(serializers.Serializer):
 
     # noinspection PyMethodMayBeStatic
     def validate_n(self, n: int):
+        # Плохо
         divided_by_2_3.utils.validate(n)
+        divided_by_5_7.utils.validate(n)
