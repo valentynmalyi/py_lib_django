@@ -13,4 +13,4 @@ class PrimeNumberSerializer(serializers.Serializer):
 
     # noinspection PyMethodMayBeStatic
     def validate_n(self, n: int):
-        divided_by_2_3.utils.is_divided(n)
+        divided_by_2_3.utils.validate(n)
