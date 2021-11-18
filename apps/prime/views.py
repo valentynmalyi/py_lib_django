@@ -8,9 +8,5 @@ class PrimeNumber(views.APIView):
     # noinspection PyMethodMayBeStatic
     def get(self, request, n):
         serializer = serializers.PrimeNumberSerializer(data={"n": n})
-        try:
-            serializer.is_valid(raise_exception=True)
-        except exceptions.DividedException as e:
-            return Response(data={"error": str(e)}, status=status.HTTP_400_BAD_REQUEST)
-
+        serializer.is_valid(raise_exception=True)
         return Response(data={"status": "ok"})
