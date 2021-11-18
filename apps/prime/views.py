@@ -1,7 +1,7 @@
 from rest_framework.response import Response
-from rest_framework import views, status
+from rest_framework import views
 
-from apps.prime import serializers, exceptions
+from apps.prime import serializers
 
 
 class PrimeNumber(views.APIView):
